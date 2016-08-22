@@ -42,7 +42,7 @@
             [composeViewController setRecipients:recipients];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.viewController presentViewController:composeViewController animated:YES completion:nil];
+            [self.viewController presentViewController:composeViewController animated:NO completion:nil];
         });
     }];
 }
@@ -73,7 +73,7 @@
             break;
     }
     
-    [self.viewController dismissViewControllerAnimated:YES completion:nil];
+    [self.viewController dismissViewControllerAnimated:NO completion:nil];
     
     if(webviewResult == 1) {
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
